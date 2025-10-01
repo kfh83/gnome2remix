@@ -15,9 +15,11 @@ rm *.tar*
 
 if $(grep '^ID=' /etc/os-release | grep -q ubuntu)
 then
+  apt update
   apt install -y $(cat deps_ubuntu)
 elif $(grep '^ID=' /etc/os-release | grep -q debian)
 then
+  apt update
   # Debian needs libunique to be installed manually
   apt install -y $(grep -v libunique deps_ubuntu)
   PATH=$PATH:/usr/sbin  # This is strange
