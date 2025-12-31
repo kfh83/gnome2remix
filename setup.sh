@@ -24,8 +24,8 @@ then
   apt install -y $(grep -v libunique deps_ubuntu)
   PATH=$PATH:/usr/sbin  # This is strange
   arch=$(dpkg --print-architecture)
-  wget https://mirror.yandex.ru/debian/pool/main/libu/libunique/libunique-1.0-0_1.1.6-6_$arch.deb
-  wget https://mirror.yandex.ru/debian/pool/main/libu/libunique/libunique-dev_1.1.6-6_$arch.deb
+  wget https://snapshot.debian.org/archive/debian/20170702T040340Z/pool/main/libu/libunique/libunique-1.0-0_1.1.6-6_$arch.deb
+  wget https://snapshot.debian.org/archive/debian/20170702T040340Z/pool/main/libu/libunique/libunique-dev_1.1.6-6_$arch.deb
   dpkg -i libunique-1.0-0_1.1.6-6_$arch.deb libunique-dev_1.1.6-6_$arch.deb
   apt -y --fix-broken install
 else
